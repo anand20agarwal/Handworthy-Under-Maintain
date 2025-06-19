@@ -25,7 +25,15 @@
 
     .image img {
       width: 100%;
-      max-width: 600px;
+      max-width: 500px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .phone-maintain {
+      display: none;
+      width: 100%;
+      max-width: 400px;
       height: auto;
       margin-bottom: 20px;
     }
@@ -57,13 +65,22 @@
       animation-delay: 1.5s;
     }
 
+    hr {
+      width: 60%;
+      margin: 20px auto;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+
     .social-media {
       display: flex;
       justify-content: center;
       gap: 25px;
       margin-top: 15px;
-      animation: fadeInUp 2s ease-out forwards;
-      opacity: 0;
+    }
+
+    .social-media a {
+      animation: dropBounce 1.2s ease-out forwards;
     }
 
     .facebook {
@@ -92,6 +109,24 @@
       }
     }
 
+    @keyframes dropBounce {
+      0% {
+        transform: translateY(-200px);
+        opacity: 0;
+      }
+      60% {
+        transform: translateY(20px);
+        opacity: 1;
+      }
+      80% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
     @media (max-width: 768px) {
       .main-text-area h2 {
         font-size: 1.6rem;
@@ -107,6 +142,16 @@
     }
 
     @media (max-width: 480px) {
+      .image {
+        display: none;
+      }
+
+      .phone-maintain {
+        display: block;
+        height: auto;
+        width: 268px;
+      }
+
       .main-text-area h2 {
         font-size: 1.4rem;
       }
@@ -119,21 +164,27 @@
 </head>
 <body>
 
+  <!-- Shown only on desktop/tablet -->
   <div class="image">
     <img src="Main-Logo_main.gif" alt="Under Maintenance Page">
   </div>
 
+  <!-- Shown only on phones -->
+  <img src="Maintain.gif" alt="Under Maintenance Page Mobile" class="phone-maintain">
+
   <div class="main-text-area">
     <h2>Website Under Renovation</h2>
     <p>
-      We’re hitting refresh at Handworthy! After learning and growing, we’re thrilled to unveil our new lineup: 
-      <strong>AUDIO WEARABLE ACCESSORIES</strong> for YOU—students, pros, and tech lovers alike. 
+      We’re hitting refresh at Handworthy! After learning and growing, we’re thrilled to unveil our new lineup:
+      <strong>AUDIO WEARABLE ACCESSORIES</strong> for YOU—students, pros, and tech lovers alike.
       Affordable innovation meets everyday needs.
     </p>
     <p>
       Follow us for updates and get ready to upgrade your tech game.
     </p>
   </div>
+
+  <hr />
 
   <div class="social-media">
     <a href="https://www.facebook.com/TryHandworthy/" target="_blank">
