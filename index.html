@@ -15,35 +15,46 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #ffffff;
       color: #333;
       display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 20px;
-      text-align: center;
       min-height: 100vh;
+      width: 100%;
+      max-width: 1200px;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
     }
 
     .logo-image img {
-      width: 50vh;
-      margin-bottom: 20px;
+      width: 45vh;
+      max-width: 300px;
+      margin-bottom: 10px;
     }
 
     .image img {
       width: 100%;
-      max-width: 500px;
+      max-width: 400px;
       height: auto;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .phone-maintain {
       display: none;
       width: 100%;
-      max-width: 400px;
+      max-width: 300px;
       height: auto;
       margin-bottom: 20px;
     }
@@ -52,11 +63,12 @@
       max-width: 900px;
       width: 100%;
       padding: 0 15px;
+      flex: 1;
     }
 
     .main-text-area h2 {
       font-size: 2rem;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       color: #222;
       animation: fadeInUp 1s ease-out forwards;
       opacity: 0;
@@ -64,7 +76,7 @@
 
     .main-text-area p {
       font-size: 1.125rem;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       line-height: 1.6;
       color: #333;
       animation: fadeInUp 1s ease-out forwards;
@@ -96,9 +108,13 @@
       font-size: 1.1rem;
     }
 
+    footer {
+      width: 100%;
+    }
+
     hr {
       width: 60%;
-      margin: 30px auto 20px;
+      margin: 15px auto 10px;
       border: none;
       border-top: 1px solid #ccc;
     }
@@ -107,7 +123,7 @@
       display: flex;
       justify-content: center;
       gap: 25px;
-      margin-top: 15px;
+      margin-top: 10px;
     }
 
     .social-media a {
@@ -115,37 +131,21 @@
     }
 
     .facebook {
-      height: auto;
+        margin-top: -11px;
       width: 60px;
-      margin-top: -11px;
-    }
-
-    .facebook:hover {
-      transform: scale(1.2) rotate(5deg);
-      opacity: 0.8;
     }
 
     .instagram {
-      height: auto;
       width: 40px;
     }
 
-    .instagram:hover {
+    .twitter {
+      width: 40px;
+    }
+
+    .social-media img:hover {
       transform: scale(1.2) rotate(5deg);
       opacity: 0.8;
-    }
-
-    .twitter{
-        height: auto;
-      width: 40px;
-    }
-
-    .twitter:hover{
-        transform: scale(1.2) rotate(5deg);
-      opacity: 0.8;
-    }
-    strong {
-      color: #000;
     }
 
     @keyframes fadeInUp {
@@ -178,17 +178,24 @@
     }
 
     @media (max-width: 768px) {
-      body {
-        justify-content: flex-start;
+      .logo-image img {
+        width: 22vh;
       }
 
-      .logo-image img {
-      width: 22vh;
-      margin-bottom: 20px;
-    }
+      .image {
+        display: none;
+      }
+
+      .phone-maintain {
+        display: block;
+      }
 
       .main-text-area h2 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+      }
+
+      .main-text-area p {
+        font-size: 1rem;
       }
 
       .pc-web {
@@ -199,96 +206,74 @@
         display: block;
       }
 
-      .main-text-area p {
-        font-size: 1rem;
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        z-index: 999;
       }
 
-      .social-media {
-        margin-top: auto;
-        padding-bottom: 20px;
-        gap: 15px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .image {
+      hr {
         display: none;
-      }
-
-      .phone-maintain {
-        display: block;
-        width: 250px;
-      }
-
-      .main-text-area h2 {
-        font-size: 1.4rem;
-      }
-
-      .main-text-area p {
-        font-size: 0.95rem;
       }
     }
   </style>
 </head>
 <body>
-
-  <!-- Logo Image -->
-  <div class="logo-image">
-    <img src="handworthy-logo.png" alt="Handworthy Logo">
-  </div>
-
-  <!-- Animated Image -->
-  <div class="image">
-    <img src="Main-Logo_main.gif" alt="Handworthy website under maintenance logo">
-  </div>
-
-  <!-- Mobile GIF -->
-  <img src="Phone-maintain.gif" alt="Mobile version under maintenance image" class="phone-maintain">
-
-  <!-- Main Text -->
-  <div class="main-text-area">
-    <h2>Website Under Renovation</h2>
-
-    <p>
-      We’re hitting refresh at Handworthy! After learning and growing, we’re thrilled to unveil our new lineup:
-    </p>
-
-    <div class="pc-web">
-      <strong>AUDIO, WEARABLE And ACCESSORIES</strong>
+  <div class="container">
+    <!-- Logo Image -->
+    <div class="logo-image">
+      <img src="handworthy-logo.png" alt="Handworthy Logo" />
     </div>
 
-    <div class="mobile-web">
-      <strong>
-        <span>AUDIO</span>
-        <span>WEARABLE</span>
-        <span>ACCESSORIES</span>
-      </strong>
+    <!-- Desktop Image -->
+    <div class="image">
+      <img src="Main-Logo_main.gif" alt="Handworthy website under maintenance logo" />
     </div>
 
-    <p>
-      for YOU—students, pros, and tech lovers alike. Affordable innovation meets everyday needs.
-    </p>
+    <!-- Mobile Image -->
+    <img src="Phone-maintain.gif" alt="Mobile version under maintenance" class="phone-maintain" />
 
-    <p>
-      Follow us for updates and get ready to upgrade your tech game.
-    </p>
+    <!-- Main Text -->
+    <div class="main-text-area">
+      <h2>Website Under Renovation</h2>
+      <p>We’re hitting refresh at Handworthy! After learning and growing, we’re thrilled to unveil our new lineup:</p>
+
+      <div class="pc-web">
+        <strong>AUDIO, WEARABLE And ACCESSORIES</strong>
+      </div>
+
+      <div class="mobile-web">
+        <strong>
+          <span>AUDIO</span>
+          <span>WEARABLE</span>
+          <span>ACCESSORIES</span>
+        </strong>
+      </div>
+
+      <p>for YOU—students, pros, and tech lovers alike. Affordable innovation meets everyday needs.</p>
+      <p>Follow us for updates and get ready to upgrade your tech game.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <hr />
+      <div class="social-media">
+        <a href="https://www.facebook.com/TryHandworthy/" target="_blank">
+          <img src="Facebook.png" alt="Follow us on Facebook" class="facebook" />
+        </a>
+        <a href="https://www.instagram.com/tryhandworthy/" target="_blank">
+          <img src="Instagram.jpg" alt="Follow us on Instagram" class="instagram" />
+        </a>
+        <a href="https://x.com/TryHandworthy" target="_blank">
+          <img src="X.svg" alt="Follow us on Twitter" class="twitter" />
+        </a>
+      </div>
+    </footer>
   </div>
-
-  <!-- Horizontal Line Above Social Links -->
-  <hr />
-
-  <!-- Social Media Icons -->
-  <div class="social-media">
-    <a href="https://www.facebook.com/TryHandworthy/" target="_blank">
-      <img src="Facebook.png" alt="Follow us on Facebook" class="facebook">
-    </a>
-    <a href="https://www.instagram.com/tryhandworthy/" target="_blank">
-      <img src="Instagram.jpg" alt="Follow us on Instagram" class="instagram">
-    </a>
-     <a href="https://x.com/TryHandworthy" target="_blank">
-      <img src="X.svg" alt="Follow us on Instagram" class="twitter">
-    </a>
-  </div>
-
 </body>
 </html>
